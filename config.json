@@ -1,0 +1,33 @@
+{
+    "fmriprep_output":"fmriprep_output/",
+    "subjects":"subjects.txt",
+    "output":"output",
+
+
+    "kernel_size":   2.55,
+    "fd_threshold":  0.25,
+    "dummy_scans":   4,
+    "low_pass":      0.1,
+    "high_pass":     0.01,
+    "n_a_comp_corr": 5,
+
+
+    "run_files": [
+        "task-Memoryfmri3mmisoAPme_run-1_space-fsLR_den-91k_bold.dtseries.nii",
+        "task-Memoryfmri3mmisoAPme_run-2_space-fsLR_den-91k_bold.dtseries.nii",
+        "task-Memoryfmri3mmisoAPme_run-3_space-fsLR_den-91k_bold.dtseries.nii",
+        "task-Memoryfmri3mmisoAPme_run-4_space-fsLR_den-91k_bold.dtseries.nii",
+        "task-MovieCloudyfmri3mmisoAPme_run-1_space-fsLR_den-91k_bold.dtseries.nii",
+        "task-MovieDispicablefmri3mmisoAPme_run-1_space-fsLR_den-91k_bold.dtseries.nii",
+        "task-MoviePresentfmri3mmisoAPme_run-1_space-fsLR_den-91k_bold.dtseries.nii"
+    ],
+    "event_files": [
+        "/run1.txt",
+        "/run2.txt",
+        "/run3.txt",
+        "/run4.txt",
+        null,
+        null,
+        null
+    ]
+}

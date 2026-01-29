@@ -32,6 +32,7 @@ def clean_fmriprep_output(cfg, subject):
     kernel_size     = cfg['kernel_size']
     fd_threshold    = cfg['fd_threshold']
     n_dummy         = cfg['dummy_scans']
+    n_a_comp_corr   = cfg['n_a_comp_corr']
     low_pass        = cfg['low_pass']
     high_pass       = cfg['high_pass']
 
@@ -69,9 +70,9 @@ def clean_fmriprep_output(cfg, subject):
             fd_threshold=fd_threshold
         )
 
-        # Add first 5 a_comp_cor components to confounds.
+        # Add first N a_comp_cor components to confounds.
         comp_cor, _ = interfaces.fmriprep.load_confounds_strategy(cii_file, denoise_strategy='compcor')
-        comp_cols = [c for c in comp_cor.columns if 'a_comp_cor_' in c][:5]
+        comp_cols = [c for c in comp_cor.columns if 'a_comp_cor_' in c][:n_a_comp_corr]
         confounds[comp_cols] = comp_cor[comp_cols]
 
         # Remove dummy scans.

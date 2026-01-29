@@ -19,6 +19,7 @@ def main():
 
     output   = cfg['output']
     subjects = np.loadtxt(f"{cfg['subjects']}", dtype=str)
+    if subjects.ndim == 0: subjects = [subjects]
 
     for subject in subjects:
 

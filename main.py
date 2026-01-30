@@ -23,11 +23,14 @@ def main():
 
     for subject in subjects:
 
-        if os.path.exists(f'{output}/data/sub-{subject}/networks.R.label.gii'):
+        if os.path.exists(f'{output}/sub-{subject}/networks.R.label.gii'):
             continue
-
-        utils.clean_fmriprep_output(cfg, subject)
-        utils.run_precision_mapping(cfg, subject)
+        
+        try:
+            utils.clean_fmriprep_output(cfg, subject)
+            utils.run_precision_mapping(cfg, subject)
+        except:
+            continue
 
 
 if __name__ == '__main__':

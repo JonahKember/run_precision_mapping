@@ -50,6 +50,10 @@ def clean_fmriprep_output(cfg, subject):
 
     for cii_file, event_file  in zip(cii_files, event_files):
 
+        if not os.path.exists(cii_file):
+            print(f'Warning: {cii_file} can not be found.')
+            continue
+
         print(f'Processing {cii_file}...')
 
         scan_info = json.load(open(cii_file.replace('.dtseries.nii', '.json')))
